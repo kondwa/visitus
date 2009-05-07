@@ -2,7 +2,6 @@
 
 one:
   guest_id: 1
-  work_phone: MyString
   mobile_phone: MyString
   organisation: MyString
   city: MyString
@@ -10,7 +9,6 @@ one:
 
 two:
   guest_id: 1
-  work_phone: MyString
   mobile_phone: MyString
   organisation: MyString
   city: MyString

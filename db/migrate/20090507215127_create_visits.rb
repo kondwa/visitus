@@ -1,6 +1,7 @@
 class CreateVisits < ActiveRecord::Migration
   def self.up
     create_table :visits do |t|
+      t.integer :guest_id
       t.datetime :visit_time
       t.text :visiting_purpose
       t.datetime :signoff_time

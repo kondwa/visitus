@@ -572,3 +572,148 @@ Migrating to CreateGuests (20090507213542)
   [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `visits`[0m
   [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `visits`[0m
   [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `visits`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (54.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (40.9ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateNames (20090507200411)
+  [4;35;1mSQL (43.8ms)[0m   [0mCREATE TABLE `names` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `title` varchar(255), `first_name` varchar(255), `middle_name` varchar(255), `last_name` varchar(255), `suffix` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090507200411')[0m
+Migrating to CreateContacts (20090507203815)
+  [4;35;1mSQL (23.6ms)[0m   [0mCREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `work_phone` varchar(255), `mobile_phone` varchar(255), `organisation` varchar(255), `city` varchar(255), `country` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090507203815')[0m
+Migrating to CreateVisits (20090507212639)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `visits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `visit_time` datetime, `visiting_purpose` text, `signoff_time` datetime, `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090507212639')[0m
+Migrating to CreateGuests (20090507213542)
+  [4;35;1mSQL (31.0ms)[0m   [0mCREATE TABLE `guests` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090507213542')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `contacts`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `contacts`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `guests`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `guests`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `guests`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `names`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `names`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `names`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `visits`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `visits`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `visits`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mName Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `names`[0m
+  [4;35;1mContact Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mGuest Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `guests`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (49.1ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (48.2ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateNames (20090507200411)
+  [4;35;1mSQL (36.6ms)[0m   [0mCREATE TABLE `names` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `title` varchar(255), `first_name` varchar(255), `middle_name` varchar(255), `last_name` varchar(255), `suffix` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090507200411')[0m
+Migrating to CreateVisits (20090507215127)
+  [4;35;1mSQL (4.7ms)[0m   [0mCREATE TABLE `visits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `visit_time` datetime, `visiting_purpose` text, `signoff_time` datetime, `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090507215127')[0m
+Migrating to CreateContacts (20090507215137)
+  [4;35;1mSQL (32.6ms)[0m   [0mCREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `mobile_phone` varchar(255), `organisation` varchar(255), `city` varchar(255), `country` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090507215137')[0m
+Migrating to CreateGuests (20090507215204)
+  [4;35;1mSQL (2.7ms)[0m   [0mCREATE TABLE `guests` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090507215204')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `contacts`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `contacts`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `guests`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `guests`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `guests`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `names`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `names`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `names`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `visits`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `visits`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `visits`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mName Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `names`[0m
+  [4;35;1mContact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mGuest Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `guests`[0m
+  [4;35;1mVisit Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `visits`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGuest Create (0.4ms)[0m   [0mINSERT INTO `guests` (`created_at`, `updated_at`) VALUES('2009-05-07 21:59:05', '2009-05-07 21:59:05')[0m
+  [4;36;1mVisit Create (0.4ms)[0m   [0;1mINSERT INTO `visits` (`visiting_purpose`, `comment`, `created_at`, `guest_id`, `updated_at`, `visit_time`, `signoff_time`) VALUES('Software Development Orientation', NULL, '2009-05-07 21:59:05', 1, '2009-05-07 21:59:05', '2009-05-07 21:58:57', NULL)[0m
+  [4;35;1mName Create (0.3ms)[0m   [0mINSERT INTO `names` (`created_at`, `guest_id`, `title`, `updated_at`, `last_name`, `suffix`, `first_name`, `middle_name`) VALUES('2009-05-07 21:59:05', 1, 'Mr.', '2009-05-07 21:59:05', 'Hara', NULL, 'Kondwani', NULL)[0m
+  [4;36;1mContact Create (0.2ms)[0m   [0;1mINSERT INTO `contacts` (`city`, `created_at`, `guest_id`, `country`, `updated_at`, `organisation`, `mobile_phone`) VALUES('Lilongwe', '2009-05-07 21:59:05', 1, 'Malawi', '2009-05-07 21:59:05', 'Baobab Health', '+265.99.947.7737')[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mGuest Load (0.3ms)[0m   [0;1mSELECT * FROM `guests` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.9ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (32.9ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateNames (20090507200411)
+  [4;35;1mSQL (16.4ms)[0m   [0mCREATE TABLE `names` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `title` varchar(255), `first_name` varchar(255), `middle_name` varchar(255), `last_name` varchar(255), `suffix` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090507200411')[0m
+Migrating to CreateVisits (20090507215127)
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE TABLE `visits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `visit_time` datetime, `visiting_purpose` text, `signoff_time` datetime, `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (15.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090507215127')[0m
+Migrating to CreateContacts (20090507215137)
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `mobile_phone` varchar(255), `organisation` varchar(255), `city` varchar(255), `country` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090507215137')[0m
+Migrating to CreateGuests (20090507215204)
+  [4;35;1mSQL (13.8ms)[0m   [0mCREATE TABLE `guests` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090507215204')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `contacts`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `contacts`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `guests`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `guests`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `guests`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `names`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `names`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `names`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `visits`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `visits`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `visits`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateNames (20090507200411)
+Migrating to CreateVisits (20090507215127)
+Migrating to CreateContacts (20090507215137)
+Migrating to CreateGuests (20090507215204)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `contacts`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `contacts`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `guests`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `guests`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `guests`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `names`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `names`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `names`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `visits`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `visits`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `visits`[0m
