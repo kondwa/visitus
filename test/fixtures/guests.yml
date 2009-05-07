@@ -1,13 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  visit_time: 2009-05-07 22:50:09
-  visiting_purpose: MyText
-  comment: MyText
-  signoff_time: 2009-05-07 22:50:09
-
-two:
-  visit_time: 2009-05-07 22:50:09
-  visiting_purpose: MyText
-  comment: MyText
-  signoff_time: 2009-05-07 22:50:09
+# one:
+#   column: value
+#
+# two:
+#   column: value
