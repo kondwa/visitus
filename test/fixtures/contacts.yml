@@ -3,7 +3,7 @@
 one:
   guest_id: 1
   work_phone: MyString
-  home_phone: MyString
+  mobile_phone: MyString
   organisation: MyString
   city: MyString
   country: MyString
@@ -11,7 +11,7 @@ one:
 two:
   guest_id: 1
   work_phone: MyString
-  home_phone: MyString
+  mobile_phone: MyString
   organisation: MyString
   city: MyString
   country: MyString
