@@ -9,6 +9,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20090507202352) do
+
+  create_table "contacts", :force => true do |t|
+    t.integer  "guest_id"
+    t.string   "work_phone"
+    t.string   "home_phone"
+    t.string   "organisation"
+    t.string   "city"
+    t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "guests", :force => true do |t|
+    t.text     "comment"
+    t.datetime "visit_datetime"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "names", :force => true do |t|
+    t.integer  "guest_id"
+    t.string   "title"
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
+    t.string   "suffix"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
