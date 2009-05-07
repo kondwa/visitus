@@ -12,3 +12,4 @@ callibrate*
 doc/*
 doc/plugins
 log/*
+db/schema.rb

@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  guest_id: 1
+  title: MyString
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  suffix: MyString
+
+two:
+  guest_id: 1
+  title: MyString
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  suffix: MyString
