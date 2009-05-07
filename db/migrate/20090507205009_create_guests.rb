@@ -1,8 +1,10 @@
 class CreateGuests < ActiveRecord::Migration
   def self.up
     create_table :guests do |t|
+      t.datetime :visit_time
+      t.text :visiting_purpose
       t.text :comment
-      t.datetime :visit_datetime
+      t.datetime :signoff_time
 
       t.timestamps
     end

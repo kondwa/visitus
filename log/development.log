@@ -485,3 +485,13 @@ Migrating to CreateContacts (20090507203815)
   [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `names`[0m
   [4;35;1mSQL (1.1ms)[0m   [0mdescribe `names`[0m
   [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `names`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGuest Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `guests`[0m
+  [4;35;1mName Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `names`[0m
+  [4;36;1mContact Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGuest Create (0.3ms)[0m   [0;1mINSERT INTO `guests` (`comment`, `created_at`, `updated_at`, `visit_datetime`) VALUES(NULL, '2009-05-07 20:45:14', '2009-05-07 20:45:14', '2009-05-07 20:41:29')[0m
+  [4;35;1mName Create (0.2ms)[0m   [0mINSERT INTO `names` (`created_at`, `guest_id`, `title`, `updated_at`, `last_name`, `suffix`, `first_name`, `middle_name`) VALUES('2009-05-07 20:45:14', 1, 'Mr.', '2009-05-07 20:45:14', 'Hara', NULL, 'Kondwani', NULL)[0m
+  [4;36;1mContact Create (0.2ms)[0m   [0;1mINSERT INTO `contacts` (`work_phone`, `city`, `created_at`, `guest_id`, `country`, `updated_at`, `organisation`, `mobile_phone`) VALUES(NULL, 'Lilongwe', '2009-05-07 20:45:14', 1, 'Malawi', '2009-05-07 20:45:14', 'Baobab Health', '+265.99.947.7737')[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCOMMIT[0m
