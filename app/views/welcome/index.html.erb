@@ -1,3 +1,7 @@
-<%=image_tag "rails.png", :alt=>"Baobab Logo", %>
-<h1>Welcome to Baobab Health</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div align="center">
+  <%=image_tag "rails.png", :alt=>"Baobab Logo",:align=>"center" %>
+  <h1>Baobab Health Guest Book</h1>
+  <p>
+    <%= render :partial=>"shared/visit_menu" %>
+  </p>
+</div>

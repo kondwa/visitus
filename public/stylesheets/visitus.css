@@ -1,0 +1,19 @@
+.menu{
+  background-color:windowFace;
+  width:auto;
+  height:auto;
+}
+
+.menu ul, .menu li{
+  margin:0px;
+  padding:0px;
+  list-style:none;
+}
+.menu ul li a{
+  font-size:large;
+  text-decoration:none;
+  display:inline_table;
+  width:15em;
+  padding:0.2em 0.5em
+  margin: 0px 0.5em;
+}
