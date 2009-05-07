@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090507203815) do
+ActiveRecord::Schema.define(:version => 20090507205009) do
 
   create_table "contacts", :force => true do |t|
     t.integer  "guest_id"
@@ -23,8 +23,10 @@ ActiveRecord::Schema.define(:version => 20090507203815) do
   end
 
   create_table "guests", :force => true do |t|
+    t.datetime "visit_time"
+    t.text     "visiting_purpose"
     t.text     "comment"
-    t.datetime "visit_datetime"
+    t.datetime "signoff_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
