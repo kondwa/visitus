@@ -1,9 +1,9 @@
 body {
-  background-color:Khaki;
+  background-color:transparent;
+  color:VioletRed;
 }
 .menu {
   background-color:LightYellow;
-  border:3px solid SaddleBrown;
   display:table;
   height:auto;
 }
@@ -11,16 +11,17 @@ ul.menu, ul.menu li {
   list-style-image:none;
   list-style-position:outside;
   list-style-type:none;
-  margin:0;
+  margin:1em;
   padding:0;
+  border:2px double SaddleBrown;
 }
 ul.menu li a {
   background-color:buttonface;
   border:3px outset buttonshadow;
   display:block;
   font-size:x-large;
-  margin:0.5em;
-  padding:1em;
+  margin:0;
+  padding:0.7em;
   text-decoration:none;
-  width:12em;
+  width:10em;
 }
