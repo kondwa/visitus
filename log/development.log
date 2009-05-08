@@ -717,3 +717,603 @@ Migrating to CreateGuests (20090507215204)
   [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `visits`[0m
   [4;35;1mSQL (0.6ms)[0m   [0mdescribe `visits`[0m
   [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `visits`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP DATABASE IF EXISTS `visitus_test`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE DATABASE `visitus_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mCREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `mobile_phone` varchar(255), `organisation` varchar(255), `city` varchar(255), `country` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (20.6ms)[0m   [0mCREATE TABLE `guests` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (21.3ms)[0m   [0mCREATE TABLE `names` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `title` varchar(255), `first_name` varchar(255), `middle_name` varchar(255), `last_name` varchar(255), `suffix` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE TABLE `visits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `visit_time` datetime, `visiting_purpose` text, `signoff_time` datetime, `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090507215204')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090507215127')[0m
+  [4;35;1mSQL (13.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090507215137')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090507200411')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (26.5ms)[0m   [0;1mDROP DATABASE IF EXISTS `visitus_test`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE DATABASE `visitus_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.9ms)[0m   [0mCREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `mobile_phone` varchar(255), `organisation` varchar(255), `city` varchar(255), `country` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (19.4ms)[0m   [0mCREATE TABLE `guests` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (21.2ms)[0m   [0mCREATE TABLE `names` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `title` varchar(255), `first_name` varchar(255), `middle_name` varchar(255), `last_name` varchar(255), `suffix` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE TABLE `visits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `visit_time` datetime, `visiting_purpose` text, `signoff_time` datetime, `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (18.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (22.3ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090507215204')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090507215127')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090507215137')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090507200411')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (38.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `visitus_test`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE DATABASE `visitus_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (6.8ms)[0m   [0mCREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `mobile_phone` varchar(255), `organisation` varchar(255), `city` varchar(255), `country` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mCREATE TABLE `guests` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mCREATE TABLE `names` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `title` varchar(255), `first_name` varchar(255), `middle_name` varchar(255), `last_name` varchar(255), `suffix` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE TABLE `visits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `guest_id` int(11), `visit_time` datetime, `visiting_purpose` text, `signoff_time` datetime, `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (5.1ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090507215204')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090507215127')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090507215137')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090507200411')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 00:48:55) [GET]
+Rendering welcome/index
+ERROR: compiling _run_erb_app47views47welcome47index46html46erb RAISED compile error
+/var/www/visitus/app/views/welcome/index.html.erb:1: syntax error, unexpected ')'
+...s.png", :alt=>"Baobab Logo", ).to_s); @output_buffer.concat ...
+                              ^
+Function body:           def _run_erb_app47views47welcome47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat((image_tag "rails.png", :alt=>"Baobab Logo", ).to_s); @output_buffer.concat "\n<h1>Welcome to Baobab Health</h1>\n<p>Find me in app/views/welcome/index.html.erb</p>\n"
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /var/www/visitus/app/views/welcome/index.html.erb:7:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/var/www/visitus/app/views/welcome/index.html.erb:1: syntax error, unexpected ')'
+...s.png", :alt=>"Baobab Logo", ).to_s); @output_buffer.concat ...
+                              ^) on line #1 of app/views/welcome/index.html.erb:
+1: <%=image_tag "rails.png", :alt=>"Baobab Logo", %>
+2: <h1>Welcome to Baobab Health</h1>
+3: <p>Find me in app/views/welcome/index.html.erb</p>
+
+    app/views/welcome/index.html.erb:7:in `compile!'
+
+Rendered rescues/_trace (77.1ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 00:50:44) [GET]
+Rendering welcome/index
+Completed in 43ms (View: 39, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 00:51:49) [GET]
+Rendering welcome/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 00:53:35) [GET]
+Rendering welcome/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 00:58:38) [GET]
+Rendering welcome/index
+ERROR: compiling _run_erb_app47views47welcome47index46html46erb RAISED compile error
+/var/www/visitus/app/views/welcome/index.html.erb:6: syntax error, unexpected tSYMBEG, expecting kDO or '{' or '('
+...t Time Visitors", visit_path :first ).to_s); @output_buffer....
+                              ^
+/var/www/visitus/app/views/welcome/index.html.erb:7: syntax error, unexpected tSYMBEG, expecting kDO or '{' or '('
+...urning Visitors", visit_path :returning ).to_s); @output_buf...
+                              ^
+/var/www/visitus/app/views/welcome/index.html.erb:8: syntax error, unexpected tSYMBEG, expecting kDO or '{' or '('
+...ors Signing Off", visit_path :signoff ).to_s); @output_buffe...
+                              ^
+Function body:           def _run_erb_app47views47welcome47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<div align=\"center\">\n  "
+; @output_buffer.concat((image_tag "rails.png", :alt=>"Baobab Logo",:align=>"center" ).to_s); @output_buffer.concat "\n  <h1>Baobab Health Guest Book</h1>\n  <p>\n    <ul>\n      <li>"
+
+
+
+; @output_buffer.concat((link_to "First Time Visitors", visit_path :first ).to_s); @output_buffer.concat "</li>\n      <li>"
+; @output_buffer.concat((link_to "Returning Visitors", visit_path :returning ).to_s); @output_buffer.concat "</li>\n      <li>"
+; @output_buffer.concat((link_to "Visitors Signing Off", visit_path :signoff ).to_s); @output_buffer.concat "\n    </ul>\n  "
+
+; @output_buffer.concat((link).to_s); @output_buffer.concat "\n  </p>\n</div>\n"
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /var/www/visitus/app/views/welcome/index.html.erb:16:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/var/www/visitus/app/views/welcome/index.html.erb:6: syntax error, unexpected tSYMBEG, expecting kDO or '{' or '('
+...t Time Visitors", visit_path :first ).to_s); @output_buffer....
+                              ^
+/var/www/visitus/app/views/welcome/index.html.erb:7: syntax error, unexpected tSYMBEG, expecting kDO or '{' or '('
+...urning Visitors", visit_path :returning ).to_s); @output_buf...
+                              ^
+/var/www/visitus/app/views/welcome/index.html.erb:8: syntax error, unexpected tSYMBEG, expecting kDO or '{' or '('
+...ors Signing Off", visit_path :signoff ).to_s); @output_buffe...
+                              ^) on line #6 of app/views/welcome/index.html.erb:
+3:   <h1>Baobab Health Guest Book</h1>
+4:   <p>
+5:     <ul>
+6:       <li><%=link_to "First Time Visitors", visit_path :first %></li>
+7:       <li><%=link_to "Returning Visitors", visit_path :returning %></li>
+8:       <li><%=link_to "Visitors Signing Off", visit_path :signoff %>
+9:     </ul>
+
+    app/views/welcome/index.html.erb:16:in `compile!'
+
+Rendered rescues/_trace (75.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 00:59:35) [GET]
+Rendering welcome/index
+
+ActionView::TemplateError (undefined method `visit_path' for #<ActionView::Base:0xb79d88a4>) on line #6 of app/views/welcome/index.html.erb:
+3:   <h1>Baobab Health Guest Book</h1>
+4:   <p>
+5:     <ul>
+6:       <li><%=link_to "First Time Visitors", visit_path(:first) %></li>
+7:       <li><%=link_to "Returning Visitors", visit_path(:returning) %></li>
+8:       <li><%=link_to "Visitors Signing Off", visit_path(:signoff) %>
+9:     </ul>
+
+    app/views/welcome/index.html.erb:6
+
+Rendered rescues/_trace (151.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 01:01:50) [GET]
+Rendering welcome/index
+
+ActionView::TemplateError (visit_url failed to generate from {:action=>"first", :controller=>"visit"}, expected: {:controller=>:visit}, diff: {:action=>"first", :controller=>:visit}) on line #6 of app/views/welcome/index.html.erb:
+3:   <h1>Baobab Health Guest Book</h1>
+4:   <p>
+5:     <ul>
+6:       <li><%=link_to "First Time Visitors", visit_path(:first) %></li>
+7:       <li><%=link_to "Returning Visitors", visit_path(:returning) %></li>
+8:       <li><%=link_to "Visitors Signing Off", visit_path(:signoff) %>
+9:     </ul>
+
+    (eval):16:in `visit_path'
+    app/views/welcome/index.html.erb:6
+
+Rendered rescues/_trace (86.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 01:02:39) [GET]
+Rendering welcome/index
+
+ActionView::TemplateError (undefined method `visit_path' for #<ActionView::Base:0xb7acc418>) on line #6 of app/views/welcome/index.html.erb:
+3:   <h1>Baobab Health Guest Book</h1>
+4:   <p>
+5:     <ul>
+6:       <li><%=link_to "First Time Visitors", visit_path(:first) %></li>
+7:       <li><%=link_to "Returning Visitors", visit_path(:returning) %></li>
+8:       <li><%=link_to "Visitors Signing Off", visit_path(:signoff) %>
+9:     </ul>
+
+    app/views/welcome/index.html.erb:6
+
+Rendered rescues/_trace (79.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 01:02:57) [GET]
+Rendering welcome/index
+
+ActionView::TemplateError (undefined local variable or method `link' for #<ActionView::Base:0xb74a146c>) on line #10 of app/views/welcome/index.html.erb:
+7:       <li><%=link_to "Returning Visitors", visit_path(:returning) %></li>
+8:       <li><%=link_to "Visitors Signing Off", visit_path(:signoff) %>
+9:     </ul>
+10:   <%=link%>
+11:   </p>
+12: </div>
+
+    app/views/welcome/index.html.erb:10
+
+Rendered rescues/_trace (144.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 01:04:26) [GET]
+Rendering welcome/index
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#first (for 127.0.0.1 at 2009-05-08 01:04:31) [GET]
+Rendering visit/first
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/visit/first]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#returning (for 127.0.0.1 at 2009-05-08 01:04:35) [GET]
+Rendering visit/returning
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/visit/returning]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#signoff (for 127.0.0.1 at 2009-05-08 01:04:39) [GET]
+Rendering visit/signoff
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/visit/signoff]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 01:07:04) [GET]
+Rendering welcome/index
+
+ActionView::TemplateError (Missing template welcome/_visit_menu.erb in view path app/views) on line #5 of app/views/welcome/index.html.erb:
+2:   <%=image_tag "rails.png", :alt=>"Baobab Logo",:align=>"center" %>
+3:   <h1>Baobab Health Guest Book</h1>
+4:   <p>
+5:     <%= render :partial=>"visit_menu" %>
+6:   </p>
+7: </div>
+
+    app/views/welcome/index.html.erb:5
+
+Rendered rescues/_trace (156.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 01:07:39) [GET]
+Rendering welcome/index
+Rendered shared/_visit_menu (2.0ms)
+Completed in 20ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 01:09:29) [GET]
+Rendering welcome/index
+Rendered shared/_visit_menu (1.9ms)
+Completed in 19ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 01:11:35) [GET]
+Rendering welcome/index
+Rendered shared/_visit_menu (1.0ms)
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 01:20:04) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Rendered shared/_visit_menu (1.2ms)
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 10:19:57) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Rendered shared/_visit_menu (2.0ms)
+Completed in 84ms (View: 78, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 10:21:16) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Rendered shared/_visit_menu (1.0ms)
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 10:23:42) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Rendered shared/_visit_menu (1.1ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 11:40:34) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Rendered shared/_visit_menu (1.0ms)
+Completed in 19ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#first (for 127.0.0.1 at 2009-05-08 11:59:47) [GET]
+Rendering template within layouts/application
+Rendering visit/first
+Completed in 216ms (View: 214, DB: 0) | 200 OK [http://localhost/visit/first]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#returning (for 127.0.0.1 at 2009-05-08 11:59:52) [GET]
+Rendering template within layouts/application
+Rendering visit/returning
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/visit/returning]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#signoff (for 127.0.0.1 at 2009-05-08 12:00:00) [GET]
+Rendering template within layouts/application
+Rendering visit/signoff
+Completed in 34ms (View: 30, DB: 0) | 200 OK [http://localhost/visit/signoff]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#first (for 127.0.0.1 at 2009-05-08 12:00:40) [GET]
+Rendering template within layouts/application
+Rendering visit/first
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/visit/first]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#first (for 127.0.0.1 at 2009-05-08 12:03:01) [GET]
+Rendering template within layouts/application
+Rendering visit/first
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/visit/first]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 12:13:43) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Rendered shared/_visit_menu (1.1ms)
+Completed in 33ms (View: 29, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-05-08 12:20:50) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Rendered shared/_visit_menu (1.0ms)
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/]
