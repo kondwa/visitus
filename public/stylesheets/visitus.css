@@ -25,3 +25,10 @@ ul.menu li a {
   text-decoration:none;
   width:10em;
 }
+form label {
+  width:10em;
+  display:inline-table;
+  text-align:right;
+  margin-right:.5em;
+  padding-right:.5em;
+}

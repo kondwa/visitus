@@ -1959,3 +1959,144 @@ Processing VisitController#first (for 127.0.0.1 at 2009-05-08 14:31:38) [GET]
 Rendering template within layouts/application
 Rendering visit/first
 Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/visit/first]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#first (for 127.0.0.1 at 2009-05-08 15:16:41) [GET]
+Rendering template within layouts/application
+Rendering visit/first
+Rendered shared/_name_fields (3.7ms)
+Rendered shared/_contact_fields (3.4ms)
+
+ActionView::TemplateError (wrong number of arguments (1 for 2)) on line #3 of app/views/shared/_visit_fields.html.erb:
+1: <% fields_for :visit do |v| %>
+2:   <% v.label :visiting_purpose %>
+3:   <% v.select :visiting_purpose %><br />
+4: <% end %>
+
+    app/views/shared/_visit_fields.html.erb:3:in `select'
+    app/views/shared/_visit_fields.html.erb:3
+    app/views/shared/_visit_fields.html.erb:1
+    app/views/visit/first.html.erb:6
+    app/views/visit/first.html.erb:3
+
+Rendered rescues/_trace (74.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#first (for 127.0.0.1 at 2009-05-08 15:18:24) [GET]
+Rendering template within layouts/application
+Rendering visit/first
+Rendered shared/_name_fields (2.5ms)
+Rendered shared/_contact_fields (1.3ms)
+Rendered shared/_visit_fields (1.1ms)
+Completed in 91ms (View: 88, DB: 0) | 200 OK [http://localhost/visit/first]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#first (for 127.0.0.1 at 2009-05-08 15:19:20) [GET]
+Rendering template within layouts/application
+Rendering visit/first
+Rendered shared/_name_fields (2.0ms)
+Rendered shared/_contact_fields (3.5ms)
+Rendered shared/_visit_fields (0.6ms)
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/visit/first]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#first (for 127.0.0.1 at 2009-05-08 15:20:04) [GET]
+Rendering template within layouts/application
+Rendering visit/first
+Rendered shared/_contact_fields (2.1ms)
+Rendered shared/_visit_fields (0.7ms)
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/visit/first]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#first (for 127.0.0.1 at 2009-05-08 15:20:06) [GET]
+Rendering template within layouts/application
+Rendering visit/first
+Rendered shared/_contact_fields (2.0ms)
+Rendered shared/_visit_fields (0.6ms)
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/visit/first]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#first (for 127.0.0.1 at 2009-05-08 15:21:01) [GET]
+Rendering template within layouts/application
+Rendering visit/first
+Rendered shared/_name_fields (2.0ms)
+Rendered shared/_contact_fields (3.6ms)
+Rendered shared/_visit_fields (0.7ms)
+Completed in 22ms (View: 19, DB: 0) | 200 OK [http://localhost/visit/first]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#first (for 127.0.0.1 at 2009-05-08 15:22:08) [GET]
+Rendering template within layouts/application
+Rendering visit/first
+Rendered shared/_name_fields (2.0ms)
+Rendered shared/_contact_fields (3.6ms)
+Rendered shared/_visit_fields (1.5ms)
+Completed in 23ms (View: 19, DB: 0) | 200 OK [http://localhost/visit/first]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#first (for 127.0.0.1 at 2009-05-08 15:37:03) [GET]
+Rendering template within layouts/application
+Rendering visit/first
+Rendered shared/_name_fields (2.0ms)
+Rendered shared/_contact_fields (1.9ms)
+Rendered shared/_visit_fields (0.6ms)
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/visit/first]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#first (for 127.0.0.1 at 2009-05-08 15:47:50) [GET]
+Rendering template within layouts/application
+Rendering visit/first
+Rendered shared/_name_fields (2.0ms)
+Rendered shared/_contact_fields (2.0ms)
+Rendered shared/_visit_fields (0.7ms)
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/visit/first]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#first (for 127.0.0.1 at 2009-05-08 15:49:08) [GET]
+Rendering template within layouts/application
+Rendering visit/first
+Rendered shared/_name_fields (2.0ms)
+Rendered shared/_contact_fields (1.9ms)
+Rendered shared/_visit_fields (0.6ms)
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/visit/first]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#returning (for 127.0.0.1 at 2009-05-08 16:24:36) [GET]
+Rendering template within layouts/application
+Rendering visit/returning
+Completed in 75ms (View: 1, DB: 0) | 200 OK [http://localhost/visit/returning]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VisitController#first (for 127.0.0.1 at 2009-05-08 16:25:19) [GET]
+Rendering template within layouts/application
+Rendering visit/first
+Rendered shared/_name_fields (2.1ms)
+Rendered shared/_contact_fields (2.5ms)
+Rendered shared/_visit_fields (0.9ms)
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/visit/first]

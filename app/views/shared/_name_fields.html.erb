@@ -1,0 +1,12 @@
+<% fields_for :name do |n| %>
+  <%=n.label :title %>
+  <%=n.text_field :title %><br />
+  <%=n.label :first_name %>
+  <%=n.text_field :first_name %><br />
+  <%=n.label :middle_name %>
+  <%=n.text_field :middle_name %><br />
+  <%=n.label :last_name %>
+  <%=n.text_field :last_name %><br />
+  <%=n.label :suffix %>
+  <%=n.text_field :suffix %><br />
+<% end %>

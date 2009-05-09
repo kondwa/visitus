@@ -1,0 +1,12 @@
+<% fields_for :contacts do |c| %>
+  <%=c.label :work_phone %>
+  <%=c.text_field :work_phone %><br />
+  <%=c.label :home_phone %>
+  <%=c.text_field :home_phone %><br />
+  <%=c.label :organisation %>
+  <%=c.text_field :organisation %><br />
+  <%=c.label :city %>
+  <%=c.text_field :city %><br />
+  <%=c.label :country %>
+  <%=c.text_field :country %><br />
+<% end %>

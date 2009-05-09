@@ -1,4 +1,7 @@
 <h1>First Visit</h1>
-<% form_for :guest do |form| %>
 
+<% form_for :guest do |form| %>
+  <%=render :partial=> "shared/name_fields" %>
+  <%=render :partial=> "shared/contact_fields" %>
+  <%=render :partial=> "shared/visit_fields" %>
 <% end %>
